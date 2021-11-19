@@ -115,6 +115,30 @@
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
+
+<div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
+					<form method = "POST" action = "edit_query_account.php?admin_id=<?php echo $fetch['admin_id']?>">
+						<div class = "form-group">
+							<label>Name </label>
+							<input type = "text" class = "form-control" value = "<?php echo $fetch['name']?>" name = "name" />
+						</div>
+						<div class = "form-group">
+							<label>Username </label>
+							<input type = "text" class = "form-control" value = "<?php echo $fetch['username']?>" name = "username" />
+						</div>
+						<div class = "form-group">
+							<label>Password </label>
+							<input type = "password" class = "form-control" value = "<?php echo $fetch['password']?>" name = "password" />
+						</div>
+						<br />
+						<div class = "form-group">
+							<button name = "edit_account" class = "btn btn-primary form-control" style="background:dodgerBlue;"><i class = ""></i> Save Changes</button>
+						</div>
+					</form>
+				</div>
+
+
+
  
     </div>
     

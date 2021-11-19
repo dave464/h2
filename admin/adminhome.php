@@ -115,11 +115,11 @@
                              <div class="cbox">
                                  <i class="bx bxs-store fa-3x text-info"  style="font-size:90px; margin-top:400;"></i>
                 
-                                 <span style="float: left; margin-top:-80px; margin-bottom: 55px; 
+                                 <span style="float: left; margin-top:-90px; margin-bottom: 55px; 
                                  margin-left: 10px;font-weight: 600;font-size: 55px; 
                                  font-family:  RoxboroughCF Bold; color:#fff; "  >110<br></span>
                                   <strong><h1 style="color:#fff;font-weight: 600; 
-                                   margin-top:-130px; font-family:georgia;
+                                   margin-top:-140px; font-family:georgia;
                                    margin-left: 10px; font-size: 19px;">Total Water Stations</h1></strong>
                              </div>
                          </div>
@@ -132,10 +132,10 @@
                              <div class="cbox">
                                  <i class="fa fa-flask fa-3x text-info"></i>
                 
-                                 <span style="float: left; margin-top:-60px; margin-bottom: 55px; margin-left: 12px;
+                                 <span style="float: left; margin-top:-70px; margin-bottom: 55px; margin-left: 12px;
                                  font-weight: 600;font-size: 55px; font-family:RoxboroughCF Bold; color:#fff ; " >110 </span>
                                 <h1 style="font-weight: 600; color:#fff ;font-family: georgia; 
-                                margin-top:-110px;  margin-left: 10px; font-size: 19px;">Total Passed Result</h1>
+                                margin-top:-130px;  margin-left: 10px; font-size: 19px;">Total Passed Result</h1>
                              </div>
                          </div>
         

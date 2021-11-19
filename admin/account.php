@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../admin/navstyle.css">
     <link rel="stylesheet" href="../admin/ad_style.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap1.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
 
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -19,6 +19,11 @@
 
     <!-- Font Link -->
      <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+     
+<!-- Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+  <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
    </head>
 
 
@@ -108,17 +113,135 @@
    
 
    <div id="tbl-contain" style=" margin-top:-240px;
-    width: 97%; height:510px;
+    width: 97%; height:100%; max-height:3000px;
      background-color: white;  border-radius: .4rem;
      border-color:dodgerBlue;
     border:2px solid dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
- 
+     
+<div>
+     <a class = "btn btn-primary"  id ="addBtn" href="add_account.php" > Add Account</a> </div> <br>
+   <table id="table" class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
+  <thead>
+    <tr>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">USERNAME</th>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">PASSWORD</th>  
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php  
+							$query = $conn->query("SELECT * FROM `admin`") or die(mysqli_error());
+							while($fetch = $query->fetch_array()){
+						?>
+
+    <tr>
+    <th scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['admin_id']?></th>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['username']?></td>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo md5($fetch['password'])?></td>
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_account.php" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
+       <a class = "btn btn-danger" href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
+      
+    </tr>
+    <?php
+							}
+						?>
+  </tbody>
+</table> <br>
+    </div>  
+
     </div>
     
    </div>
+
+
+  
+ 
+  
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+   <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script> 
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+ 
+
+ 
+    
+   
+<script type = "text/javascript">
+	$(document).ready(function(){
+		$('#table').DataTable(
+		{
+		
+      pageLength: 10,
+        lengthMenu: [[10, 20, 30, 40, 50 - 1], [10, 20, 30, 40, 50, 'all']],
+       
+        "columnDefs": [ {
+            "searchable": false,
+
+            "orderable": false,
+           
+            type:'title-string', targets: 0,
+        } ],
+
+        
+		}
+	);
+	});
+</script> 
+
+
+
+<style>
+
+#addBtn.btn.btn-primary{
+  margin-top: 130px;
+  margin-left:20px;
+ bottom:20px;
+ color:white;
+}
+#table_length.dataTables_length{
+        width:120px;
+        height: 10px;
+        margin-left:13px;
+    }
+
+#table_paginate.dataTables_paginate.paging_simple_numbers{
+  margin-right:20px;
+}
+
+#table_info.dataTables_info{
+  width:200px;
+        height: 20px;
+        margin-left:13px;
+}
+
+#table_filter.dataTables_filter{
+   
+    margin-right: 20px;
+
+}
+tr:hover {
+          background-color: #b2f8ff;
+        }
+
+</style>
+
+
+
+
+
+
 
 <style>
   textarea{

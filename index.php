@@ -23,7 +23,7 @@
          <div class="login-content">
 			<form method = "POST">
 				<img  style="clip-path: circle(); margin-left: 130px;" src="img/admin.jfif">
-				<h2 class="title">Welcome</h2>
+				<h2 class="title" style=" font-family:Georgia;">Welcome</h2>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>

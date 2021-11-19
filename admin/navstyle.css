@@ -227,9 +227,10 @@ th, td {
 	
 }
 .card-common i {
-	margin-top: 23%;
+	margin-top: 20%;
 	margin-left: 200px;
 	font-size: 70px;
+ 
 	
 	color: #fff;
 	
@@ -269,8 +270,8 @@ th, td {
  border:5px solid #fff;
 }
 .card-common2 i {
-	margin-top: 20%;
-	margin-left: 150px;
+	margin-top: 23%;
+	margin-left: 220px;
 	font-size: 70px;
 	
 	color: #fff ;
