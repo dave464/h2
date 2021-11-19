@@ -75,7 +75,7 @@
     background-image: linear-gradient(340deg, #2234ae 0%,  #191714 89%);">
       <br> 
       <span style="color:white;
-    margin-left:280px; margin-top:30px; font-size: 25px;
+    margin-left:280px; margin-top:30px; font-size: 40px; font-family:Monotype Corsiva;
   font-weight: 400;" class="links_name">Dashboard</span>
 
 
@@ -87,10 +87,10 @@
 <!-- Main Content -->
    <div class="home_content">
     
-   
-<div class="action">
-        <div class="profile" style="margin-top:-150px;
-        margin-right:20px;" onclick="menuToggle()">
+  
+   <div class="action">
+        <div class="profile" style="margin-top:-340px;
+        margin-right:17px;float:right" onclick="menuToggle()">
             <img src="../img/admin.JFIF" alt="">
         </div>
         <div class="menu">
@@ -98,7 +98,7 @@
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="#">User Profile</a></li>
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
@@ -113,13 +113,13 @@
    <div class="card card-common">
                          <div class="card-body">
                              <div class="cbox">
-                                 <i class="bx bxs-store fa-3x text-info"></i>
+                                 <i class="bx bxs-store fa-3x text-info"  style="font-size:90px; margin-top:400;"></i>
                 
-                                 <span style="float: left; margin-top:-50px; margin-bottom: 55px; 
+                                 <span style="float: left; margin-top:-80px; margin-bottom: 55px; 
                                  margin-left: 10px;font-weight: 600;font-size: 55px; 
                                  font-family:  RoxboroughCF Bold; color:#fff; "  >110<br></span>
-                                  <strong><h1 style="color:#F0F8FF;font-weight: 600; 
-                                    font-family:  RoxboroughCF Bold; margin-top:-110px; 
+                                  <strong><h1 style="color:#fff;font-weight: 600; 
+                                   margin-top:-130px; font-family:georgia;
                                    margin-left: 10px; font-size: 19px;">Total Water Stations</h1></strong>
                              </div>
                          </div>
@@ -132,10 +132,10 @@
                              <div class="cbox">
                                  <i class="fa fa-flask fa-3x text-info"></i>
                 
-                                 <span style="float: left; margin-top:-50px; margin-bottom: 55px; margin-left: 12px;
-                                 font-weight: 600;font-size: 50px; font-family:RoxboroughCF Bold; color:#fff ; " >110 </span>
-                                <h1 style="font-weight: 600; color:#fff ;font-family:  RoxboroughCF Bold; 
-                                margin-top:-110px; margin-left:px; font-size: 19px;">Total Passed Result</h1>
+                                 <span style="float: left; margin-top:-60px; margin-bottom: 55px; margin-left: 12px;
+                                 font-weight: 600;font-size: 55px; font-family:RoxboroughCF Bold; color:#fff ; " >110 </span>
+                                <h1 style="font-weight: 600; color:#fff ;font-family: georgia; 
+                                margin-top:-110px;  margin-left: 10px; font-size: 19px;">Total Passed Result</h1>
                              </div>
                          </div>
         

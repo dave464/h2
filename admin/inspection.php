@@ -79,7 +79,7 @@
     background-image: linear-gradient(340deg, #2234ae 0%,  #191714 89%);">
       <br> 
       <span style="color:white;
-    margin-left:280px; margin-top:30px; font-size: 25px;
+    margin-left:280px; margin-top:30px; font-size: 40px; font-family:Monotype Corsiva;
   font-weight: 400;" class="links_name">Inspection and Monitoring</span>
 
 
@@ -99,17 +99,17 @@
       ">
 
 
-
 <div class="action">
-        <div class="profile" onclick="menuToggle()">
+        <div class="profile" style="margin-top:-100px;
+        margin-right:17px;float:right" onclick="menuToggle()">
             <img src="../img/admin.JFIF" alt="">
         </div>
-        <div class="menu">
+        <div class="menu" style=margin-left:820px;>
             <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="#">User Profile</a></li>
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
@@ -119,7 +119,7 @@
             const toggleMenu = document.querySelector(".menu");
             toggleMenu.classList.toggle('active')
         }
-    </script>
+    </script> 
 
 
 

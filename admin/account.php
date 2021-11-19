@@ -7,7 +7,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Announcement</title>
+    <title>User Profile</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../admin/navstyle.css">
     <link rel="stylesheet" href="../admin/ad_style.css">
@@ -72,8 +72,8 @@
     background-image: linear-gradient(340deg, #2234ae 0%,  #191714 89%);">
       <br> 
       <span style="color:white;
-    margin-left:280px; margin-top:30px; font-size: 40px; font-family:Monotype Corsiva;
-  font-weight: 400;" class="links_name">Announcement</span>
+    margin-left:280px; margin-top:30px;  font-size: 40px; font-family:Monotype Corsiva;
+  font-weight: 400;" class="links_name">Accounts</span>
   
 
 
@@ -94,7 +94,7 @@
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
+                <li><img src="../img/user.png" alt=""><a href="#">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
@@ -115,25 +115,11 @@
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
-<img  src="../img/anno.gif" style="height:200px; width:200px;
- float:right;margin-top:-237px;">
-
-<form  method="post" >
-                        
- <textarea style="width:750px; margin-left:40px;margin-top:50px;
-   height:24em;  " name="announce" id="body"></textarea>
-                     
-      <div>
-     <a class = "btn btn-primary" style="background-color:dodgerBlue;
-     margin-left:710px; margin-top:13px;"  > Submit</a>
-     </div>                      
-  
-  </form>
  
     </div>
     
    </div>
->
+
 <style>
   textarea{
     border-color:dodgerBlue;

@@ -1,81 +1,134 @@
-<!DOCTYPE html>
+
+<!DOCTYPE html> 
 <?php
 	require_once 'validate.php';
 	require 'name.php';
 ?>
-<html lang = "en">
-	<head>
-		<title>Edit Acct</title>
-		<meta charset = "utf-8" />
-		<meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
-		<link rel = "stylesheet" type = "text/css" href = "../css/bootstrap.css " />
-		<link rel = "stylesheet" type = "text/css" href = "../css/style.css" />
-	</head>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Edit Account</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../admin/navstyle.css">
+    <link rel="stylesheet" href="../admin/ad_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap1.min.css" />
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Link -->
+     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+   </head>
+
+
 <body>
-	<nav style = "background-color:#d9d9d9;" class = "navbar navbar-default">
-		<div  class = "container-fluid">
-			<div class = "navbar-header">
-				<img style = "" src = "../images/adi.png" width = "115px" height = "100px" />
-				<strong style="font-size: 36px; font-family: Anton;"> TROJAN</strong> <strong><span style="font-size:36px; color:#00c2cb;font-family: Anton;">HORSE</span></strong>
-			</div>
-			<ul class = "nav navbar-nav pull-right ">
-				<li class = "dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class = "glyphicon glyphicon-user"></i> <?php echo $name;?></a>
-					<ul class="dropdown-menu">
-						<li><a href="logout.php"><i class = "glyphicon glyphicon-off"></i> Logout</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<div class = "container-fluid">	
-		<ul class = "nav nav-pills">
-			<li><a href = "home.php">Home</a></li>
-			<li class = "active"><a href = "account.php">Accounts</a></li>
-			<li><a href = "reserve.php">Reservation</a></li>
-			<li><a href = "room.php">Room</a></li>	
-			<li><a href = "admin_gal.php">Gallery</a></li>
-		</ul>	
-	</div>
-	<br />
-	<div class = "container-fluid">
-		<div class = "panel panel-default">
-			<div class = "panel-body">
-				<div class = "alert alert-info">Account / Change Account</div>
-				<?php
-					$query = $conn->query("SELECT * FROM `admin` WHERE `admin_id` = '$_REQUEST[admin_id]'") or die(mysqli_error());
-					$fetch = $query->fetch_array();
-				?>
-				<br />
-				<div class = "col-md-4">	
-					<form method = "POST" action = "edit_query_account.php?admin_id=<?php echo $fetch['admin_id']?>">
-						<div class = "form-group">
-							<label>Name </label>
-							<input type = "text" class = "form-control" value = "<?php echo $fetch['name']?>" name = "name" />
-						</div>
-						<div class = "form-group">
-							<label>Username </label>
-							<input type = "text" class = "form-control" value = "<?php echo $fetch['username']?>" name = "username" />
-						</div>
-						<div class = "form-group">
-							<label>Password </label>
-							<input type = "password" class = "form-control" value = "<?php echo $fetch['password']?>" name = "password" />
-						</div>
-						<br />
-						<div class = "form-group">
-							<button name = "edit_account" class = "btn btn-warning form-control"><i class = "glyphicon glyphicon-edit"></i> Save Changes</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<br />
-	<br />
-	<div style = "text-align:right; margin-right:10px;" class = "navbar navbar-default navbar-fixed-bottom">
-		
-	</div>
+
+<!-- Navigation Bar -->
+   <div class="sidebar">   
+        <div class="logo_name" style=" margin-bottom:8px;">
+         <h3> H2Order </h3><h3>H2Order</h3></div>
+
+       <ul class="nav_list" style="margin-top:120px;">
+      
+        <li>
+         <a href="../admin/adminhome.php">
+          <i class='bx bx-grid-alt'></i>
+          <span style=" font-size: 16px;" class="links_name">Dashboard</span>
+         </a> 
+       </li>
+
+        <li>
+          <a href="../admin/calendar.php">
+           <i class='bx bxs-calendar'></i>
+           <span style=" font-size: 16px;" class="links_name">Calendar</span>
+          </a>
+        </li>
+
+        <li>
+         <a href="../admin/inspection.php">
+          <i class='bx bxs-search-alt-2'></i>
+          <span style=" font-size: 16px;" class="links_name">Inspection & Monitoring</span>
+         </a>
+       </li>
+
+       <li>
+         <a href="../admin/announcement.php">
+          <i class='bx bxs-megaphone'></i>
+          <span style=" font-size: 16px;" class="links_name">Announcements</span>
+         </a>
+     </li>
+        
+      </ul>
+   </div>
+
+   
+  </div>
+
+
+
+<!-- Blue background -->
+  <div style="height: 340px; background-color: #2234ae;
+    background-image: linear-gradient(340deg, #2234ae 0%,  #191714 89%);">
+      <br> 
+      <span style="color:white;
+    margin-left:280px; margin-top:30px; font-size: 40px; font-family:Monotype Corsiva;
+  font-weight: 400;" class="links_name">Edit Account</span>
+  
+
+
+</div>
+
+
+<!-- Main Content -->
+   <div class="home_content">
+    
+
+   <div class="action">
+        <div class="profile" style="margin-top:-340px;
+        margin-right:17px;float:right" onclick="menuToggle()">
+            <img src="../img/admin.JFIF" alt="">
+        </div>
+        <div class="menu">
+            <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
+            <ul>
+               
+                
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
+                <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function menuToggle() {
+            const toggleMenu = document.querySelector(".menu");
+            toggleMenu.classList.toggle('active')
+        }
+    </script> 
+   
+
+   <div id="tbl-contain" style=" margin-top:-240px;
+    width: 97%; height:510px;
+     background-color: white;  border-radius: .4rem;
+     border-color:dodgerBlue;
+    border:2px solid dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
+      ">
+
+ 
+    </div>
+    
+   </div>
+
+<style>
+  textarea{
+    border-color:dodgerBlue;
+    border:2px solid dodgerBlue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+  }
+</style>
+
+
 </body>
-<script src = "../js/jquery.js"></script>
-<script src = "../js/bootstrap.js"></script>
 </html>
+

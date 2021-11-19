@@ -1,9 +1,4 @@
 
-.action {
-    margin-top:-200px;
-    top: 20px;
-    float:right;
-}
 
 .action .profile {
     position: relative;
@@ -12,7 +7,7 @@
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    margin-top:90px;
+    
 }
 
 .action .profile img {
@@ -27,9 +22,9 @@
 
 .action .menu {
     position: absolute;
-    margin-top:-340px;
-    margin-right:30px;
-    
+    margin-top:-320px;
+    margin-left:860px;
+
     padding: 10px 20px;
     background: #fff;
     width: 200px;
