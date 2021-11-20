@@ -144,8 +144,8 @@
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['username']?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo md5($fetch['password'])?></td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_account.php" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger" href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_account.php?admin_id=<?php echo $fetch['admin_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
+       <a class = "btn btn-danger" href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = ""></i> Delete</a></td>
       
     </tr>
     <?php

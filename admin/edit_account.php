@@ -115,6 +115,11 @@
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
+<?php
+					$query = $conn->query("SELECT * FROM `admin` WHERE `admin_id` = '$_REQUEST[admin_id]'") or die(mysqli_error());
+					$fetch = $query->fetch_array();
+				?>
+
 
 <div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
 					<form method = "POST" action = "edit_query_account.php?admin_id=<?php echo $fetch['admin_id']?>">

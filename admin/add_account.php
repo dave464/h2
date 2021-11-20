@@ -4,6 +4,7 @@
 	require_once 'validate.php';
 	require 'name.php';
 ?>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
@@ -94,17 +95,12 @@
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
-                <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
+                <li><img src="../img/user.png" alt=""><a href="">User Profile</a></li>
+                <li><img src="../img/log-out.png" alt=""><a href="">Log-Out</a></li>
             </ul>
         </div>
     </div>
-    <script>
-        function menuToggle() {
-            const toggleMenu = document.querySelector(".menu");
-            toggleMenu.classList.toggle('active')
-        }
-    </script> 
+     
    
 
    <div id="tbl-contain" style=" margin-top:-240px;
@@ -115,7 +111,27 @@
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
- 
+<div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
+					<form method = "POST">
+						<div class = "form-group">
+							<label>Name </label>
+							<input type = "text" class = "form-control" name = "name" />
+						</div>
+						<div class = "form-group">
+							<label>Username </label>
+							<input type = "text" class = "form-control" name = "username" />
+						</div>
+						<div class = "form-group">
+							<label>Password </label>
+							<input type = "password" class = "form-control" name = "password" />
+						</div>
+						<br />
+						<div class = "form-group">
+							<button name = "add_account" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
+						</div>
+					</form>
+					<?php require_once 'add_query_account.php'?>
+				</div>   
 
 
 
@@ -136,3 +152,9 @@
 </body>
 </html>
 
+<script>
+        function menuToggle() {
+            const toggleMenu = document.querySelector(".menu");
+            toggleMenu.classList.toggle('active')
+        }
+    </script>

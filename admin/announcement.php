@@ -118,18 +118,22 @@
 <img  src="../img/anno.gif" style="height:200px; width:200px;
  float:right;margin-top:-237px;">
 
-<form  method="post" >
+<form  method="POST" >
                         
  <textarea style="width:750px; margin-left:40px;margin-top:50px;
-   height:24em;  " name="announce" id="body"></textarea>
+   height:24em;  " name="message" ></textarea>
                      
-      <div>
-     <a class = "btn btn-primary" style="background-color:dodgerBlue;
-     margin-left:710px; margin-top:13px;"  > Submit</a>
+     
+       
+     
+     <div>
+     <button name = "announcement" class = "btn btn-primary" style="background:dodgerBlue; 
+       margin-left:710px; margin-top:13px;">
+             <i class = ""></i> Submit</button> 
      </div>                      
   
   </form>
- 
+  <?php require_once 'add_announcement.php'?>
     </div>
     
    </div>
