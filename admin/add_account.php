@@ -1,3 +1,7 @@
+<?php
+ob_start();	
+?>
+
 
 <!DOCTYPE html> 
 <?php
@@ -95,8 +99,8 @@
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="">User Profile</a></li>
-                <li><img src="../img/log-out.png" alt=""><a href="">Log-Out</a></li>
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
+                <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
     </div>
@@ -112,20 +116,64 @@
       ">
 
 <div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
-					<form method = "POST">
-						<div class = "form-group">
+					<form action="add_query_account.php" method = "POST" enctype = "multipart/form-data">
+
+          <?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
+						<div class = "form-group" >
 							<label>Name </label>
-							<input type = "text" class = "form-control" name = "name" />
+              <?php if (isset($_GET['name'])) { ?>
+							<input type = "text" class = "form-control" name = "name" value="<?php echo $_GET['name']; ?>">
+              
+          <?php }else{ ?>
+            <input type="text" 
+                      name="name" 
+                      class = "form-control"
+                      >
+          <?php }?>
 						</div>
+
+
 						<div class = "form-group">
 							<label>Username </label>
-							<input type = "text" class = "form-control" name = "username" />
+              <?php if (isset($_GET['username'])) { ?>
+							<input type = "text" class = "form-control" name = "username" value="<?php echo $_GET['username']; ?>">
+
+              <?php }else{ ?>
+            <input type="text" 
+                      name="username" 
+                      class = "form-control"
+                      >
+          <?php }?>
+
 						</div>
+
+
+
 						<div class = "form-group">
 							<label>Password </label>
 							<input type = "password" class = "form-control" name = "password" />
 						</div>
-						<br />
+            <div class = "form-group">
+							<label>Confirm Password </label>
+							<input type = "password" class = "form-control" name = "re_password" >
+						</div>
+						
+            
+            <div class = "form-group" style="margin-left:500px; margin-top:-250px;">
+							<label>Photo </label>
+							<div id = "preview" style = "width:250px; height :250px; border:1px solid #000;">
+								<center id = "lbl">[Photo]</center>
+							</div>
+
+							<input type = "file" required = "required" id = "photo" name = "photo" >
+						 
+      
+            
+            
+            </div>
+            <br>
 						<div class = "form-group">
 							<button name = "add_account" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
 						</div>
@@ -148,6 +196,30 @@
   }
 </style>
 
+<script src = "../js/jquery.js"></script>
+<script src = "../js/bootstrap.js"></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+		$pic = $('<img id = "image" width = "100%" height = "100%"/>');
+		$lbl = $('<center id = "lbl">[Photo]</center>');
+		$("#photo").change(function(){
+			$("#lbl").remove();
+			var files = !!this.files ? this.files : [];
+			if(!files.length || !window.FileReader){
+				$("#image").remove();
+				$lbl.appendTo("#preview");
+			}
+			if(/^image/.test(files[0].type)){
+				var reader = new FileReader();
+				reader.readAsDataURL(files[0]);
+				reader.onloadend = function(){
+					$pic.appendTo("#preview");
+					$("#image").attr("src", this.result);
+				}
+			}
+		});
+	});
+</script>
 
 </body>
 </html>
@@ -158,3 +230,5 @@
             toggleMenu.classList.toggle('active')
         }
     </script>
+
+  

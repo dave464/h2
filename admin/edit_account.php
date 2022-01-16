@@ -135,6 +135,21 @@
 							<label>Password </label>
 							<input type = "password" class = "form-control" value = "<?php echo $fetch['password']?>" name = "password" />
 						</div>
+
+            <div class = "form-group" style="margin-left:500px; margin-top:-250px;">
+							<label>Photo </label>
+							<div id = "preview" style = "width:250px; height :250px; border:1px solid #000;">
+							<img src = "../photo/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
+							</div>
+
+							<input type = "file" required = "required" id = "photo" name = "photo" >
+						 
+            
+            
+            
+            </div>
+
+
 						<br />
 						<div class = "form-group">
 							<button name = "edit_account" class = "btn btn-primary form-control" style="background:dodgerBlue;"><i class = ""></i> Save Changes</button>
@@ -148,6 +163,32 @@
     </div>
     
    </div>
+
+  
+<script src = "../js/jquery.js"></script>
+<script src = "../js/bootstrap.js"></script>
+<script type = "text/javascript">
+	$(document).ready(function(){
+		$pic = $('<img id = "image" width = "100%" height = "100%"/>');
+		$lbl = $('<center id = "lbl">[Photo]</center>');
+		$("#photo").change(function(){
+			$("#lbl").remove();
+			var files = !!this.files ? this.files : [];
+			if(!files.length || !window.FileReader){
+				$("#image").remove();
+				$lbl.appendTo("#preview");
+			}
+			if(/^image/.test(files[0].type)){
+				var reader = new FileReader();
+				reader.readAsDataURL(files[0]);
+				reader.onloadend = function(){
+					$pic.appendTo("#preview");
+					$("#image").attr("src", this.result);
+				}
+			}
+		});
+	});
+</script>
 
 <style>
   textarea{
