@@ -9,7 +9,7 @@
 		if($row > 0){
 			session_start();
 			$_SESSION['admin_id'] = $fetch['admin_id'];
-			header('location:admin/adminhome.php');
+			header('location:adminhome.php');
 		}else{
 			echo "<center><label style = 'color:red;'>Invalid username or password</label></center>";
 		}

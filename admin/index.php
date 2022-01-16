@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<?php require_once "admin/connect.php"?>
+<?php require_once "connect.php"?>
 
 <html>
 <head>
  <title>Login</title>
- <link rel="stylesheet" type="text/css" href="style.css">
+ <link rel="stylesheet" type="text/css" href="../css/loginstyle.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
@@ -16,13 +16,13 @@
         <section>
 
          <div class="leftside"> 
-            <img style="margin-left:40px; margin-top: 40px;" src="img/Log.gif">
+            <img style="margin-left:40px; margin-top: 40px;" src="../img/Log.gif">
          </div>
          
 
          <div class="login-content">
 			<form method = "POST">
-				<img  style="clip-path: circle(); margin-left: 130px;" src="img/admin.jfif">
+				<img  style="clip-path: circle(); margin-left: 130px;" src="../img/admin.jfif">
 				<h2 class="title" style=" font-family:Georgia;">Welcome</h2>
            		<div class="input-div one">
            		   <div class="i">
@@ -45,10 +45,10 @@
                 
             	<input type="submit"  name = "login"  class="btn" value="Login">
             </form>
-			<?php require_once 'admin/login.php'?>
+			<?php require_once 'login.php'?>
         </div>
 
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
 
 
         </section>

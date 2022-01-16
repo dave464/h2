@@ -153,7 +153,7 @@
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">STATUS</th>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Comment</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">DATE</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
     </tr>
@@ -162,33 +162,33 @@
     <tr>
       <th scope="row" class=" border-primary" style="border:1px solid blue;" >1</th>
       <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Otto</td>
-      <td class=" border-primary" style="border:1px solid blue;">@mdo</td>
+      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
+      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
              ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
     </tr>
     <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >1</th>
+    <th scope="row" class=" border-primary" style="border:1px solid blue;" >2</th>
       <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Otto</td>
-      <td class=" border-primary" style="border:1px solid blue;">@mdo</td>
+      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
+      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
              ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
     </tr>
     <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >1</th>
+    <th scope="row" class=" border-primary" style="border:1px solid blue;" >3</th>
       <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Otto</td>
-      <td class=" border-primary" style="border:1px solid blue;">@mdo</td>
+      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
+      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
              ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
       
     </tr>
     <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >1</th>
+    <th scope="row" class=" border-primary" style="border:1px solid blue;" >4</th>
       <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Otto</td>
-      <td class=" border-primary" style="border:1px solid blue;">@mdo</td>
+      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
+      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
              ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
       

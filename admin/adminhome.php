@@ -110,6 +110,12 @@
         }
     </script> 
 
+
+    <?php	
+			$q_wstation = $conn->query("SELECT COUNT(merchant_id) as total FROM `merchant` ") or die(mysqli_error());
+				$f_wstation = $q_wstation->fetch_array();	
+			?>
+
    <div class="card card-common">
                          <div class="card-body">
                              <div class="cbox">
@@ -117,7 +123,7 @@
                 
                                  <span style="float: left; margin-top:-90px; margin-bottom: 55px; 
                                  margin-left: 10px;font-weight: 600;font-size: 55px; 
-                                 font-family:  RoxboroughCF Bold; color:#fff; "  >110<br></span>
+                                 font-family:  RoxboroughCF Bold; color:#fff; "  ><?php echo $f_wstation['total']?><br></span>
                                   <strong><h1 style="color:#fff;font-weight: 600; 
                                    margin-top:-140px; font-family:georgia;
                                    margin-left: 10px; font-size: 19px;">Total Water Stations</h1></strong>
