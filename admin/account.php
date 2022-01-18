@@ -99,7 +99,8 @@
             <ul>
                
                 
-                <li><img src="../img/user.png" alt=""><a href="#">User Profile</a></li>
+            <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
@@ -129,7 +130,7 @@
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">USERNAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">PASSWORD</th>  
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">PHOTO</th>  
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
     </tr>
   </thead>
@@ -143,9 +144,9 @@
     <th scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['admin_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['username']?></td>
-      <td class=" border-primary" style="border:1px solid blue;"><?php echo md5($fetch['password'])?></td>
+      <td class=" border-primary" style="border:1px solid blue;"><center><img src = "../photo/<?php echo $fetch['photo']?>" height = "50" width = "50"/></center></td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_account.php?admin_id=<?php echo $fetch['admin_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger" href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = ""></i> Delete</a></td>
+       <a class = "btn btn-danger" onclick = "confirmationDelete(this); return false;"  href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = ""></i> Delete</a></td>
       
     </tr>
     <?php
@@ -174,8 +175,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  
-
- 
+    <script type = "text/javascript">
+	function confirmationDelete(anchor){
+		var conf = confirm("Are you sure you want to delete this record?");
+		if(conf){
+			window.location = anchor.attr("href");
+		}
+	} 
+</script>
     
    
 <script type = "text/javascript">

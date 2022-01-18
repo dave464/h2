@@ -110,6 +110,7 @@
             <ul>
                
                 
+            <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
                 <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
@@ -191,7 +192,7 @@
       <td class=" border-primary" style="border:1px solid blue;">Passed</td>
       <td class=" border-primary" style="border:1px solid blue;">2021-11-20</td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
-             ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
+      onclick = "confirmationDelete(this); return false;"   ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
       
     </tr>
   </tbody>
@@ -226,6 +227,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  
+
+
+    <script type = "text/javascript">
+	function confirmationDelete(anchor){
+		var conf = confirm("Are you sure you want to delete this record?");
+		if(conf){
+			window.location = anchor.attr("href");
+		}
+	} 
+</script>
+
+
     
    
 <script type = "text/javascript">

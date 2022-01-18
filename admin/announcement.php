@@ -1,3 +1,7 @@
+<?php
+ob_start();	
+?>
+
 
 <!DOCTYPE html> 
 <?php
@@ -94,6 +98,7 @@
             <ul>
                
                 
+            <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
                 <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
@@ -127,7 +132,7 @@
        
      
      <div>
-     <button name = "announcement" class = "btn btn-primary" style="background:dodgerBlue; 
+     <button name = "announcement" onclick="saveFunction()" class = "btn btn-primary" style="background:dodgerBlue; 
        margin-left:710px; margin-top:13px;">
              <i class = ""></i> Submit</button> 
      </div>                      
@@ -145,6 +150,15 @@
     box-shadow: 0 0 8px 0 dodgerBlue;
   }
 </style>
+
+
+<script>
+function saveFunction() {
+  alert("The Data Send Successfully");
+}
+</script>
+
+
 
 
 </body>

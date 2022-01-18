@@ -98,6 +98,7 @@
             <ul>
                
                 
+                <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
                 <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
@@ -169,7 +170,7 @@
         var data = new google.visualization.arrayToDataTable([
         
           ['Barangay', 'No. of Waterstation'],
-          ["Brgy.1", 1], ["Brgy.2",2], ["Brgy.3", 1], ["Brgy.4", 4],  ['Brgy.5', 3],
+          ["Brgy.1", <?php echo $f_wstation['total']?>], ["Brgy.2",2], ["Brgy.3", 1], ["Brgy.4", 4],  ['Brgy.5', 3],
           ["Brgy.6", 4], ["Brgy.7", 1], ["Brgy.8", 2], ["Brgy.9", 1], ["Brgy.10", 3]
          
         ]);

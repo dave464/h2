@@ -99,6 +99,7 @@ ob_start();
             <ul>
                
                 
+            <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
                 <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
@@ -176,7 +177,7 @@ ob_start();
             </div>
             
 						<div class = "form-group">
-							<button name = "add_account" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
+							<button name = "add_account"  class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
 						</div>
 					</form>
 					<?php require_once 'add_query_account.php'?>
@@ -241,3 +242,9 @@ ob_start();
     </script>
 
   
+
+<script>
+function saveFunction() {
+  alert("Successfully Added");
+}
+</script>

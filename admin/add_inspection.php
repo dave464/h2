@@ -94,8 +94,8 @@
             <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
             <ul>
                
-                
-                <li><img src="../img/user.png" alt=""><a href="inspection.php">User Profile</a></li>
+            <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
                 <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
             </ul>
         </div>
