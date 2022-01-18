@@ -87,7 +87,7 @@
    <div class="action">
         <div class="profile" style="margin-top:-340px;
         margin-right:17px;float:right" onclick="menuToggle()">
-            <img src="../img/admin.JFIF" alt="">
+           <img src = "../photo/<?php echo $fetch['photo']?>" />
         </div>
         <div class="menu">
             <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
@@ -122,7 +122,8 @@
 
 
 <div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
-					<form method = "POST" action = "edit_query_account.php?admin_id=<?php echo $fetch['admin_id']?>">
+
+					<form method = "POST" enctype = "multipart/form-data" action = "edit_query_account.php?admin_id=<?php echo $fetch['admin_id']?>" >
 						<div class = "form-group">
 							<label>Name </label>
 							<input type = "text" class = "form-control" value = "<?php echo $fetch['name']?>" name = "name" />
@@ -155,6 +156,7 @@
 							<button name = "edit_account" class = "btn btn-primary form-control" style="background:dodgerBlue;"><i class = ""></i> Save Changes</button>
 						</div>
 					</form>
+         
 				</div>
 
 

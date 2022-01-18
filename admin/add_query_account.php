@@ -1,6 +1,6 @@
 <?php 
 
-session_start(); 
+
 include "connect.php";
 	if(ISSET($_POST['add_account']) && isset($_POST['name'])){
 		function validate($data){

@@ -92,7 +92,7 @@ ob_start();
    <div class="action">
         <div class="profile" style="margin-top:-340px;
         margin-right:17px;float:right" onclick="menuToggle()">
-            <img src="../img/admin.JFIF" alt="">
+            <img src = "../photo/<?php echo $fetch['photo']?>" />
         </div>
         <div class="menu">
             <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
@@ -115,12 +115,13 @@ ob_start();
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
-<div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
+<div class = "col-md-4" style="margin-top:-190px; margin-left:40px; ">	
 					<form action="add_query_account.php" method = "POST" enctype = "multipart/form-data">
 
           <?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
      	<?php } ?>
+
 						<div class = "form-group" >
 							<label>Name </label>
               <?php if (isset($_GET['name'])) { ?>
@@ -161,9 +162,9 @@ ob_start();
 						</div>
 						
             
-            <div class = "form-group" style="margin-left:500px; margin-top:-250px;">
+            <div class = "form-group" style="margin-left:500px; margin-top:-290px;">
 							<label>Photo </label>
-							<div id = "preview" style = "width:250px; height :250px; border:1px solid #000;">
+							<div id = "preview" style = "width:240px; height :240px; border:1px solid #000;">
 								<center id = "lbl">[Photo]</center>
 							</div>
 
@@ -173,7 +174,7 @@ ob_start();
             
             
             </div>
-            <br>
+            
 						<div class = "form-group">
 							<button name = "add_account" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
 						</div>
@@ -194,6 +195,14 @@ ob_start();
     border:2px solid dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
   }
+  .error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
 </style>
 
 <script src = "../js/jquery.js"></script>

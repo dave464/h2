@@ -91,7 +91,7 @@
    <div class="action">
         <div class="profile" style="margin-top:-340px;
         margin-right:17px;float:right" onclick="menuToggle()">
-            <img src="../img/admin.JFIF" alt="">
+             <img src = "../photo/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
         </div>
         <div class="menu">
             <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
