@@ -129,7 +129,7 @@
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">USERNAME</th>
+    
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">PHOTO</th>  
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
     </tr>
@@ -143,10 +143,9 @@
     <tr>
     <th scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['admin_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
-      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['username']?></td>
+      
       <td class=" border-primary" style="border:1px solid blue;"><center><img src = "../photo/<?php echo $fetch['photo']?>" height = "50" width = "50"/></center></td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_account.php?admin_id=<?php echo $fetch['admin_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger" onclick = "confirmationDelete(this); return false;"  href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>"><i class = ""></i> Delete</a></td>
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-danger"   href="delete_account.php?admin_id=<?php echo $fetch['admin_id']?>" onclick = "confirmationDelete(this); return false;"><i class = ""></i> Delete</a></td>
       
     </tr>
     <?php
@@ -235,7 +234,7 @@
 
 #table_filter.dataTables_filter{
    
-    margin-right: 20px;
+    margin-right: 97px;
 
 }
 tr:hover {

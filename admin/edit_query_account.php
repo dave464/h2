@@ -11,5 +11,10 @@
 		move_uploaded_file($_FILES['photo']['tmp_name'],"../photo/" . $_FILES['photo']['name']);
 
 		$conn->query("UPDATE `admin` SET `name` = '$name', `username` = '$username', `password` = '$password', `photo` = '$photo_name' WHERE `admin_id` = '$_REQUEST[admin_id]'") or die(mysqli_error());
-		header("location:account.php");
+		echo
+		"<script>
+		alert('Data Updated Successfully');
+		document.location.href = 'account.php';
+		</script>"
+		;
 	}	

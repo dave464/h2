@@ -150,7 +150,7 @@
 
 						<br />
 						<div class = "form-group">
-							<button name = "edit_account" onclick="updateFunction()" class = "btn btn-primary form-control" style="background:dodgerBlue;"><i class = ""></i> Save Changes</button>
+							<button name = "edit_account"  class = "btn btn-primary form-control" style="background:dodgerBlue;"><i class = ""></i> Save Changes</button>
 						</div>
 					</form>
          
@@ -191,11 +191,6 @@
 </script>
 
 
-<script>
-function updateFunction() {
-  alert("Successfully Updated");
-}
-</script>
 
 <style>
   textarea{

@@ -32,7 +32,12 @@ include "connect.php";
 			}
 		else{
 			$conn->query("INSERT INTO `admin` (name, username, password, photo) VALUES('$name', '$username', '$password', '$photo_name')") or die(mysqli_error());
-			header("location:account.php");
+			echo
+			"<script>
+			alert('Data Added Successfully');
+			document.location.href = 'account.php';
+			</script>"
+			;
 		}
 	}
 ?>

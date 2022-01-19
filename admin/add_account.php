@@ -242,9 +242,3 @@ ob_start();
     </script>
 
   
-
-<script>
-function saveFunction() {
-  alert("Successfully Added");
-}
-</script>
