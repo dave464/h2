@@ -1,11 +1,34 @@
 <?php
-	if(ISSET($_POST['add_account'])){
-		$name = $_POST['name'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+include "connect.php";
+	if(ISSET($_POST['add_inspection'])){
+		$merchant_id = $_POST['merchant_id'];
+		$username = $_POST['date'];
+		$password = $_POST['status'];
 		
-			$conn->query("INSERT INTO `admin` (name, username, password) VALUES('$name', '$username', '$password')") or die(mysqli_error());
-			header("location:account.php");
+			$conn->query("INSERT INTO `inspection` (merchant_id, date, status) VALUES('$merchant_id', '$username', '$password')") or die(mysqli_error());
+			echo
+			"<script>
+			alert('Data Added Successfully');
+			document.location.href = 'inspection.php';
+			</script>"
+			;
 		
+	}
+
+
+	if (isset($_POST['merchant_id']) && !empty($_POST['merchant_id'])) {
+ 
+		// Fetch state name base on country id
+		$query = "SELECT * FROM merchant WHERE merchant_id = ".$_POST['merchant_id'];
+		$result = $conn->query($query);
+
+
+		if ($result->num_rows > 0) {
+			echo '<option value="">Select State</option>';
+			while ($row = $result->fetch_assoc()) {
+			echo '<option value="'.$row['merchant_id'].'">'.$row['name'].'</option>';
+			}
+			} 
+
 	}
 ?>

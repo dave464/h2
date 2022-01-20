@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html> 
 <?php
 	require_once 'validate.php';
@@ -111,11 +112,35 @@
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
 
+
+
+
 <div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
-					<form method = "POST"> 
+					<form action ="add_query_inspection.php" method = "POST"> 
 						<div class = "form-group">
 							<label>Name </label>
-							<input type = "text" class = "form-control" name = "name" />
+							<select  class = "form-control" required = required name = "merchant_id">
+              
+              <?php
+ $query = "SELECT * FROM merchant";
+ $result = $conn->query($query);
+ if ($result->num_rows > 0) {
+  echo '<option value="">Select Waterstation</option>';
+ while ($row = $result->fetch_assoc()) {
+ echo '<option value="'.$row['merchant_id'].'">'.$row['name'].'</option>';
+ }
+ }else{
+ echo '<option value="">Country not available</option>';
+ }
+ ?>
+
+
+
+
+              </select>
+
+
+
 						</div>
 						<div class = "form-group">
 							<label>Date </label>
@@ -133,6 +158,7 @@
 						<div class = "form-group">
 							<button name = "add_inspection" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
 						</div>
+            <?php require_once 'add_query_inspection.php'?>
 					</form>
 				
 				</div>   
