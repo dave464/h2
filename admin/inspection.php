@@ -171,19 +171,8 @@
       <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['inspection_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['date']?></td>
-      <td class=" border-primary" style="border:1px solid blue;">       <?php
-
-$startdate = $fetch['date'] ;
-$expire = strtotime($startdate. ' + 2  days');
-$today = strtotime("today midnight");
-
-if($today >= $expire){
-    echo "expired";
-} else {
-    echo "active";
-}
-?> </td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['status']?> </td>
+      <td class=" border-primary" style="border:1px solid blue; color:white;">
        <a class = "btn btn-danger"  href="delete_inspection.php?inspection_id=<?php echo $fetch['inspection_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
       
     </tr>
@@ -303,6 +292,24 @@ if($today >= $expire){
                     },
                    
                 ]  ,
+
+                "createdRow": function (row, data, index) {
+           
+
+            if (data[3] == 'Passed') {
+
+                $('td', row).eq(3).css({
+                    'color': 'green',
+                });
+            }
+
+            else if (data[3] == 'Failed') {
+                $('td', row).eq(3).css({
+
+                    'color': 'red',
+                });
+            }
+        }
 		}
 	);
 	});

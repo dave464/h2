@@ -116,7 +116,7 @@
 
 
 <div class = "col-md-4" style="margin-top:-150px; margin-left:40px; ">	
-					<form action ="add_query_inspection.php" method = "POST"> 
+					<form action ="add_query_badge.php" method = "POST"> 
 						<div class = "form-group">
 							<label>Name </label>
 							<select  class = "form-control" required = required name = "merchant_id">
@@ -146,19 +146,12 @@
 							<label>Date </label>
 							<input type = "date" class = "form-control"  required = required name = "date" />
 						</div>
-						<div class = "form-group">
-							<label>Status</label>
-							<select class = "form-control" required = required name = "status">
-								<option value = "">Choose an option</option>
-								<option value = "Passed">Passed</option>
-								<option value = "Failed">Failed</option>
-							</select>
-						</div>
+						
 						<br />
 						<div class = "form-group">
-							<button name = "add_inspection" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
+							<button name = "add_badge" class = "btn btn-info form-control" style="background:dodgerBlue;"><i class = ""></i> Saved</button>
 						</div>
-            <?php require_once 'add_query_inspection.php'?>
+            <?php require_once 'add_query_badge.php'?>
 					</form>
 				
 				</div>   

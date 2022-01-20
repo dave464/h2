@@ -149,27 +149,27 @@
 
      
 <div>
-     <a class = "btn btn-primary"  id ="addBtn"  > Add Data</a> </div>  <br>
+     <a class = "btn btn-primary"  id ="addBtn" href="add_badge.php" > Add Data</a> </div>  <br>
    <table id="table" class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
   <thead>
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">STATUS</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">DATE</th>
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">STATUS</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
     </tr>
   </thead>
   <tbody>
   
   <?php  
-							$query = $conn->query("SELECT inspection.inspection_id, merchant.name, inspection.date,inspection.status 
-              FROM merchant RIGHT JOIN inspection ON merchant.merchant_id = inspection.merchant_id ") or die(mysqli_error());
+							$query = $conn->query("SELECT badge.badge_id, merchant.name, badge.date
+              FROM merchant RIGHT JOIN badge ON merchant.merchant_id = badge.merchant_id ") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 						?>
 
     <tr>
-      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['inspection_id']?></th>
+      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['badge_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['date']?></td>
       <td class=" border-primary" style="border:1px solid blue;">       <?php
@@ -179,13 +179,13 @@ $expire = strtotime($startdate. ' + 2  days');
 $today = strtotime("today midnight");
 
 if($today >= $expire){
-    echo "expired";
+    echo "Expired";
 } else {
-    echo "active";
+    echo "Active";
 }
 ?> </td>
       <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger"  href="delete_inspection.php?inspection_id=<?php echo $fetch['inspection_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
+       <a class = "btn btn-danger"  href="delete_inspection.php?badge_id=<?php echo $fetch['badge_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
       
     </tr>
     <?php
@@ -298,6 +298,24 @@ if($today >= $expire){
                     },
                    
                 ]  ,
+
+                "createdRow": function (row, data, index) {
+           
+
+           if (data[3] == 'Active') {
+
+               $('td', row).eq(3).css({
+                   'color': 'green',
+               });
+           }
+
+           else if (data[3] == 'Expired') {
+               $('td', row).eq(3).css({
+
+                   'color': 'red',
+               });
+           }
+       }
 		}
 	);
 	});
