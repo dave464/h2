@@ -184,8 +184,8 @@ if($today >= $expire){
     echo "Active";
 }
 ?> </td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger"  href="delete_inspection.php?badge_id=<?php echo $fetch['badge_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_badge.php?badge_id=<?php echo $fetch['badge_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
+       <a class = "btn btn-danger"  href="delete_badge.php?badge_id=<?php echo $fetch['badge_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
       
     </tr>
     <?php
