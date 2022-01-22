@@ -79,7 +79,7 @@
     background-image: linear-gradient(340deg, #2234ae 0%,  #191714 89%);">
       <br> 
       <span style="color:white;
-    margin-left:280px; margin-top:30px; font-size: 40px; font-family:Monotype Corsiva;
+    margin-left:280px; margin-top:30px;  font-size: 40px; font-family:Monotype Corsiva;
   font-weight: 400;" class="links_name">Inspection and Monitoring</span>
 
 
@@ -97,6 +97,7 @@
     border:2px solid dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue; margin-left:20px;
       ">
+
 
 
 <div class="action">
@@ -126,6 +127,7 @@
 
 
 
+
 <a  class = "btn btn-default focus" href = "../admin/inspection.php"
  style="background-color:#3366ff;margin-left:20px; color:white;margin-top:20px;">
                     Aplha Lab Test <i class = "fa fa-flask"></i></a>
@@ -145,49 +147,74 @@
 
 
 
+       <br>
+   
+<form action ="add_query_feedback.php" method = "POST">
+
+
+       <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
+    <thead>
+        <tr>
+            <th>Critea</th>
+            <th>Rating</th>
+           
+        </tr>
+    </thead>
+    
+    <tbody>
+
+ 
+    
+
+
+        <tr>
+            <td><label>Name </label>
+							<select  class = "form-control" required = required name = "merchant_id">
+              
+              <?php
+ $query = "SELECT * FROM merchant";
+ $result = $conn->query($query);
+ if ($result->num_rows > 0) {
+  echo '<option value="">Select Waterstation</option>';
+ while ($row = $result->fetch_assoc()) {
+ echo '<option value="'.$row['merchant_id'].'">'.$row['name'].'</option>';
+ }
+ }else{
+ echo '<option value="">Waterstation not available</option>';
+ }
+ ?>
+
+
+
+
+              </select></td>
+            <td><fieldset class="rating">
+    <input type="radio" id="star5" name="critea_1" value="5" />
+    <label for="star5">5 stars</label>
+    <input type="radio" id="star4" name="critea_1" value="4" />
+    <label for="star4">4 stars</label>
+    <input type="radio" id="star3" name="critea_1" value="3" />
+    <label for="star3">3 stars</label>
+    <input type="radio" id="star2" name="critea_1" value="2" />
+    <label for="star2">2 stars</label>
+    <input type="radio" id="star1" name="critea_1" value="1" />
+    <label for="star1">1 star</label>
+</fieldset></td>
+           
+        </tr>
+           
+
+    </tbody>
+</table>
+
      
 <div>
-     <a class = "btn btn-primary"  id ="addBtn" href="add_feedback.php" > Create Feedback</a> </div>  <br>
-   <table id="table" class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
-  <thead>
-    <tr>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-   
-  <?php  
-							$query = $conn->query("SELECT * FROM merchant") or die(mysqli_error());
-							while($fetch = $query->fetch_array()){
-						?>
-
-    <tr>
-      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['merchant_id']?></th>
-      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
-     
-  
-
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="feedback_view.php?merchant_id=<?php echo $fetch['merchant_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-      </td>
-      
-
-      
-    </tr>
-    <?php
-							}
-						?>
-
-
-  </tbody>
-</table><br><br>  <br>
-<br>
-        <br>
-     
-
-    
-    
+     <button name = "add_feedback"  class = "btn btn-primary" style="background:dodgerBlue; 
+       margin-left:710px; margin-top:13px;">
+             <i class = ""></i> Submit</button> 
+     </div>
+</form>  
+    <br>
     </div>  
 
 
@@ -204,14 +231,16 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-
-
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script> 
 <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
 <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
-
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  
-    
+
+
     <script type = "text/javascript">
 	function confirmationDelete(anchor){
 		var conf = confirm("Are you sure you want to delete this record?");
@@ -221,6 +250,8 @@
 	} 
 </script>
 
+
+    
    
 <script type = "text/javascript">
 	$(document).ready(function(){
@@ -282,10 +313,29 @@
                     },
                    
                 ]  ,
+
+                "createdRow": function (row, data, index) {
+           
+
+           if (data[3] == 'Active') {
+
+               $('td', row).eq(3).css({
+                   'color': 'green',
+               });
+           }
+
+           else if (data[3] == 'Expired') {
+               $('td', row).eq(3).css({
+
+                   'color': 'red',
+               });
+           }
+       }
 		}
 	);
 	});
 </script> 
+
 
 
 
@@ -327,6 +377,46 @@
 tr:hover {
           background-color: #b2f8ff;
         }
+
+
+
+        .rating {
+    float:left;
+    border:none;
+}
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0, 0, 0, 0);
+}
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+}
+.rating:not(:checked) > label:before {
+    content:'★ ';
+}
+.rating > input:checked ~ label {
+    color: gold;
+}
+.rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
+    color: #f70;
+}
+.rating > input:checked + label:hover, .rating > input:checked + label:hover ~ label, .rating > input:checked ~ label:hover, .rating > input:checked ~ label:hover ~ label, .rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+}
+.rating > label:active {
+    position:relative;
+
+
+        
 
 </style>
 
