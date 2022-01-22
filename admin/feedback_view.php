@@ -7,7 +7,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Badge</title>
+    <title>Feedback</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../admin/navstyle.css">
@@ -130,18 +130,18 @@
 
 <a  class = "btn btn-default focus" href = "../admin/inspection.php"
  style="background-color:#3366ff;margin-left:20px; color:white;margin-top:20px;">
-                    Aplha Lab Test <i class = "fa fa-certificate"></i></a>
+                    Aplha Lab Test <i class = "fa fa-flask"></i></a>
 
 
+<a  class = "btn btn-default focus" href = "../admin/badge.php"
+ style="background-color:#3366ff; color:white;margin-top:20px;">
+                    Badge <i class = "fa fa-certicate"></i></a>
 
-<a  class = "btn btn-default  " href = "../admin/badge.php"
+
+<a  class = "btn btn-default  " href = "../admin/feedback.php"
   style="border:2px solid black ;margin-top:20px;
   background-image: linear-gradient(315deg, #2234ae 0%, #191714 95%);color:white;" >
-                   Badge <i class = "fa fa-flask"></i></a> 
-
-<a  class = "btn btn-default focus" href = "../admin/feedback.php"
- style="background-color:#3366ff; color:white;margin-top:20px;">
-                    Feedback <i class = "fa fa-commenting"></i></a>
+                   Feedback <i class = "fa fa-commenting"></i></a> 
 
 
 
@@ -155,37 +155,22 @@
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">DATE</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">STATUS</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
+      
     </tr>
   </thead>
   <tbody>
   
   <?php  
-							$query = $conn->query("SELECT badge.badge_id, merchant.name, badge.date
-              FROM merchant RIGHT JOIN badge ON merchant.merchant_id = badge.merchant_id ") or die(mysqli_error());
+							$query = $conn->query("SELECT feedback.feedback_id, merchant.name, merchant.merchant_id
+              FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE  feedback.merchant_id = '".$_REQUEST['merchant_id']."'") or die(mysqli_error());
 							while($fetch = $query->fetch_array()){
 						?>
 
     <tr>
-      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['badge_id']?></th>
+      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['feedback_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
-      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['date']?></td>
-      <td class=" border-primary" style="border:1px solid blue;"><?php
-
-$startdate = $fetch['date'] ;
-$expire = strtotime($startdate. ' + 2  days');
-$today = strtotime("today midnight");
-
-if($today >= $expire){
-    echo "Expired";
-} else {
-    echo "Active";
-}
-?> </td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="edit_badge.php?badge_id=<?php echo $fetch['badge_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
-       <a class = "btn btn-danger"  href="delete_badge.php?badge_id=<?php echo $fetch['badge_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>
+      
+      
       
     </tr>
     <?php

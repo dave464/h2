@@ -126,21 +126,20 @@
 
 
 
-
 <a  class = "btn btn-default focus" href = "../admin/inspection.php"
  style="background-color:#3366ff;margin-left:20px; color:white;margin-top:20px;">
-                    Aplha Lab Test <i class = "fa fa-certificate"></i></a>
+                    Aplha Lab Test <i class = "fa fa-flask"></i></a>
 
 
 <a  class = "btn btn-default focus" href = "../admin/badge.php"
  style="background-color:#3366ff; color:white;margin-top:20px;">
-                    Badge <i class = "fa fa-commenting"></i></a>
+                    Badge <i class = "fa fa-certicate"></i></a>
 
 
 <a  class = "btn btn-default  " href = "../admin/feedback.php"
   style="border:2px solid black ;margin-top:20px;
   background-image: linear-gradient(315deg, #2234ae 0%, #191714 95%);color:white;" >
-                   Feedback <i class = "fa fa-flask"></i></a> 
+                   Feedback <i class = "fa fa-commenting"></i></a> 
 
 
 
@@ -154,46 +153,33 @@
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Comment</th>
-      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">DATE</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th>
     </tr>
   </thead>
   <tbody>
+   
+  <?php  
+							$query = $conn->query("SELECT * FROM merchant") or die(mysqli_error());
+							while($fetch = $query->fetch_array()){
+						?>
+
     <tr>
-      <th scope="row" class=" border-primary" style="border:1px solid blue;" >1</th>
-      <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
-      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
-             ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
-    </tr>
-    <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >2</th>
-      <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
-      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
-             ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
-    </tr>
-    <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >3</th>
-      <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
-      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
-             ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
+      <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['merchant_id']?></th>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
+     
+  
+
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="feedback_view.php?merchant_id=<?php echo $fetch['merchant_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>
+      </td>
+      
+
       
     </tr>
-    <tr>
-    <th scope="row" class=" border-primary" style="border:1px solid blue;" >4</th>
-      <td class=" border-primary" style="border:1px solid blue;">Pocono Water Refilling Station</td>
-      <td class=" border-primary" style="border:1px solid blue;">Improper Dress Code</td>
-      <td class=" border-primary" style="border:1px solid blue;">2021-11-13</td>
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" ></i> Edit</a> <a class = "btn btn-danger"
-      onclick = "confirmationDelete(this); return false;" ><i class = "glyphicon glyphicon-remove"></i> Delete</a></td>
-      
-    </tr>
+    <?php
+							}
+						?>
+
+
   </tbody>
 </table><br><br>  <br>
 <br>
@@ -218,13 +204,12 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
-<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
-<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script> 
+
+
 <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
 <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    
  
     
     <script type = "text/javascript">
