@@ -128,48 +128,39 @@
 
 
 
-<a  class = "btn btn-default focus" href = "../admin/inspection.php"
- style="background-color:#3366ff;margin-left:20px; color:white;margin-top:20px;">
-                    Aplha Lab Test <i class = "fa fa-flask"></i></a>
-
-
-<a  class = "btn btn-default focus" href = "../admin/badge.php"
- style="background-color:#3366ff; color:white;margin-top:20px;">
-                    Badge <i class = "fa fa-certicate"></i></a>
-
-
-<a  class = "btn btn-default  " href = "../admin/feedback.php"
-  style="border:2px solid black ;margin-top:20px;
-  background-image: linear-gradient(315deg, #2234ae 0%, #191714 95%);color:white;" >
-                   Feedback <i class = "fa fa-commenting"></i></a> 
 
 
 
 
 
-       <br>
+       <br><br><br><br><br>
    
 <form action ="add_query_feedback.php" method = "POST">
 
 
-       <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
-    <thead>
-        <tr>
-            <th>Critea</th>
-            <th>Rating</th>
-           
-        </tr>
-    </thead>
-    
-    <tbody>
-
- 
-    
 
 
-        <tr>
-            <td><label>Name </label>
-							<select  class = "form-control" required = required name = "merchant_id">
+
+<div class="card" style="margin-left:20px; margin-right:20px;">
+          <div class="card-header">
+            <div class="container-fluid">
+              <div class="card-body p-0">
+                <div class="row">
+                  <div class="col-sm-12"><br>
+                    <center>
+                      <h2>EVALUATION REPORT</h2>
+                    </center><br><br>
+                    <hr>
+                  </div><br><br><br>
+                  
+
+
+                  <div class = "col-md-4" >
+        <div class = "form-group">
+
+     <strong>   <label>Name: </label></strong>
+
+							<select class = "form-control" required = required name = "merchant_id">
               
               <?php
  $query = "SELECT * FROM merchant";
@@ -183,13 +174,44 @@
  echo '<option value="">Waterstation not available</option>';
  }
  ?>
+              </select>
+
+</div>
+
+</div>
 
 
+<div class = "col-md-4" style="margin-left:310px;" >
+        <div class = "form-group">
+			<strong><label>Date:</label></strong>
+		<input type = "date" class = "form-control"  name = "date" />
+						
+</div>
+
+</div>
 
 
-              </select></td>
-            <td><fieldset class="rating">
-    <input type="radio" id="star5" name="critea_1" value="5" />
+       
+
+       <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
+    <thead>
+        <tr>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>
+           
+        </tr>
+    </thead>
+    
+    <tbody >
+
+ 
+    
+
+
+        <tr>
+            <td class=" border-primary" style="border:1px solid blue;"></td>
+            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating">
+    <input  type="radio" id="star5" name="critea_1" value="5" />
     <label for="star5">5 stars</label>
     <input type="radio" id="star4" name="critea_1" value="4" />
     <label for="star4">4 stars</label>
@@ -199,7 +221,10 @@
     <label for="star2">2 stars</label>
     <input type="radio" id="star1" name="critea_1" value="1" />
     <label for="star1">1 star</label>
-</fieldset></td>
+</fieldset>
+
+
+</td>
            
         </tr>
            
@@ -207,6 +232,15 @@
     </tbody>
 </table>
 
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<br>
      
 <div>
      <button name = "add_feedback"  class = "btn btn-primary" style="background:dodgerBlue; 
@@ -381,7 +415,7 @@ tr:hover {
 
 
         .rating {
-    float:left;
+        margin-right:25%;
     border:none;
 }
 .rating:not(:checked) > input {
@@ -396,7 +430,7 @@ tr:hover {
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:200%;
+    font-size:250%;
     line-height:1.2;
     color:#ddd;
 }

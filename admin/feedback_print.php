@@ -1,0 +1,238 @@
+<?php
+ob_start();	
+?>
+
+<!DOCTYPE html> 
+<?php
+	require_once 'validate.php';
+	
+    require 'connect.php';
+?>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../admin/navstyle.css">
+    <link rel="stylesheet" href="../admin/ad_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Font Link -->
+     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+
+<!-- Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+  <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'>
+  
+
+   </head>
+
+
+<body>
+
+
+
+<?php
+	
+	$query = $conn->query("SELECT * FROM `feedback` WHERE `feedback_id` = '$_REQUEST[feedback_id]'") or die(mysqli_error());
+	$fetch = $query->fetch_array();
+	
+?>
+
+  
+<form method = "POST"  action = "feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?> ">
+
+
+
+
+
+<div class="card" style="margin-left:20px; margin-right:20px;">
+          <div class="card-header">
+            <div class="container-fluid">
+              <div class="card-body p-0">
+                <div class="row">
+                  <div class="col-sm-12"><br>
+                    <center>
+                      <h2>EVALUATION REPORT</h2>
+                    </center><br><br>
+                    <hr>
+                  </div><br><br><br>
+                  
+          
+    
+
+                  
+                  <div class = "col-md-4" >
+        <div class = "form-group">
+      
+        
+
+        
+  <?php  
+ 
+							$query = $conn->query("SELECT feedback.feedback_id, merchant.name, feedback.date, feedback.critea_1
+              FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE `feedback_id` = '$_REQUEST[feedback_id]' ") or die(mysqli_error());
+						$fetch = $query->fetch_array();	
+						?>
+     <strong><label>Name: </label></strong>
+
+     
+           <?php echo $fetch['name']?>  
+
+    
+
+
+
+</div>
+
+</div>
+
+
+
+
+<div class = "col-md-4" style="margin-left:310px;" >
+        <div class = "form-group">
+			<strong><label>Date:</label></strong>
+            <?php echo $fetch['date']?>
+						
+</div>
+
+</div>
+
+
+       
+
+       <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
+    <thead>
+        <tr>
+            
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>
+           
+        </tr>
+    </thead>
+    
+    <tbody >
+
+    
+  <?php  
+							$query = $conn->query("SELECT feedback.feedback_id, merchant.name, feedback.date, feedback.critea_1
+              FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE `feedback_id` = '$_REQUEST[feedback_id]' ") or die(mysqli_error());
+						
+            while($fetch = $query->fetch_array()){
+						?>
+
+
+        <tr>
+        
+        <td class=" border-primary" style="border:1px solid blue;"></td>
+        
+      
+            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating">
+           
+          
+            <input  type="radio" id="star5 " name="critea_1"
+            value="5" <?php if($fetch['critea_1'] == '5') { echo "checked";}?>
+           />
+           <label for="star5">5 stars</label>
+          
+    <input type="radio" id="star4" name="critea_1"  value="4" <?php if($fetch['critea_1'] == '4') { echo "checked";}?> />
+    <label for="star4">4 stars</label>
+    <input type="radio" id="star3" name="critea_1"    value="3" <?php if($fetch['critea_1'] == '3') { echo "checked";}?>/>
+    <label for="star3">3 stars</label>
+    <input type="radio" id="star2" name="critea_1"  value="2" <?php if($fetch['critea_1'] == '2') { echo "checked";}?>/>
+    <label for="star2">2 stars</label>
+    <input type="radio" id="star1" name="critea_1"   value="1" <?php if($fetch['critea_1'] == '1') { echo "checked";}?> />
+    <label for="star1">1 star</label>
+          
+</fieldset>
+
+
+</td>
+           
+        </tr>
+        <?php
+							}
+						?>     
+       
+    </tbody>
+</table>
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<br>
+     
+<div>
+<button name = "feedback_print" type="hidden" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;"><span class="fas fa-print"></span> Print</button> 
+</form>  
+
+
+
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+<style>
+
+
+
+
+        .rating {
+        margin-right:25%;
+    border:none;
+}
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0, 0, 0, 0);
+}
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:250%;
+    line-height:1.2;
+    color:#ddd;
+}
+.rating:not(:checked) > label:before {
+    content:'★ ';
+}
+.rating > input:checked ~ label {
+    color: gold;
+}
+.rating:not(:checked) > label:hover, .rating:not(:checked) > label:hover ~ label {
+    color: #f70;
+}
+.rating > input:checked + label:hover, .rating > input:checked + label:hover ~ label, .rating > input:checked ~ label:hover, .rating > input:checked ~ label:hover ~ label, .rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+}
+.rating > label:active {
+    position:relative;
+
+
+    @media print {
+          .btn-print, .btn-docx, .btn-lg,.back, .card-title, footer{
+            display:none !important;
+      } 
+       .bg-danger {
+        background-color: #f2dede !important;
+      }     
+      }    
+
+</style>
+
+
+</body>
+</html>

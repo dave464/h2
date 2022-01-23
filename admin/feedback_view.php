@@ -149,13 +149,13 @@
 
      
 <div>
-     <a class = "btn btn-primary"  id ="addBtn" href="add_badge.php" > Add Data</a> </div>  <br>
+   </div>  <br>
    <table id="table" class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
   <thead>
     <tr>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ID</th>
       <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">NAME</th>
-      
+      <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">ACTION</th> 
     </tr>
   </thead>
   <tbody>
@@ -171,7 +171,7 @@
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       
       
-      
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>      
     </tr>
     <?php
 							}
