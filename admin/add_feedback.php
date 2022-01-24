@@ -115,6 +115,7 @@
                     </center><br><br>
                     <hr>
                   </div><br><br><br>
+
                   
 
 
@@ -154,13 +155,64 @@
 </div>
 
 
-       
+<fieldset class="border p-3  "  style="width:100%; margin-left:10px; margin-right:10px; ">
+      <legend class="w-auto px-2"  style="width:100%;">LEGEND</legend>
+            <!----============== 5star =============== -->
+        
+             <span class="fa fa-star checked" style="color: gold;margin-left:23px;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+            
+
+             <!----============== 4star =============== -->
+            
+             <span class="fa fa-star checked" style="color: gold; margin-left:60px;" ></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             
+
+              <!----============== 3star =============== -->
+             
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px; "></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             
+
+              <!----============== 2star =============== -->
+              
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd; "></span>
+            
+
+              <!----============== 1star =============== -->
+             
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px; "></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd; "></span><br>
+             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Execellent
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Very Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Fair
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Poor</p> 
+                      
+  </fieldset>     
 
        <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
     <thead>
         <tr>
-            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
-            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;text-align:center;">Critea</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;text-align:center;"> Rating</th>
            
         </tr>
     </thead>
@@ -207,8 +259,8 @@
      
 <div>
      <button name = "add_feedback"  class = "btn btn-primary" style="background:dodgerBlue; 
-       margin-left:710px; margin-top:13px;">
-             <i class = ""></i> Submit</button> 
+       margin-right:20px; margin-top:13px; float:right; ">
+             <i class = ""></i> Submit</button> <br><br><br><br>
      </div>
 </form>  
     <br>
@@ -378,7 +430,7 @@ tr:hover {
 
 
         .rating {
-        margin-right:25%;
+        margin-right:30%;
     border:none;
 }
 .rating:not(:checked) > input {

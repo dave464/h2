@@ -133,7 +133,7 @@
     <tr>
       <td scope="row" class=" border-primary" style="border:1px solid blue;" ><?php echo $fetch['inspection_id']?></th>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
-      <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['date']?></td>
+      <td class=" border-primary" style="border:1px solid blue;"><?php echo date("M d, Y", strtotime($fetch['date']))?></td>
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['status']?> </td>
       <td class=" border-primary" style="border:1px solid blue; color:white;">
        <a class = "btn btn-danger"  href="delete_inspection.php?inspection_id=<?php echo $fetch['inspection_id']?>" onclick = "confirmationDelete(this); return false;" ><i class = "" ></i> Delete</a></td>

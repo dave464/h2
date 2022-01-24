@@ -44,7 +44,7 @@ ob_start();
 ?>
 
   
-<form method = "POST"  action = "feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?> ">
+<form method = "POST"  action = "feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?> "> <br>
 
 <div class="card" style="margin-left:20px; margin-right:20px;">
           <div class="card-header">
@@ -78,7 +78,7 @@ ob_start();
 <div class = "col-md-4" style="margin-left:310px;" >
         <div class = "form-group">
 			<strong><label>Date:</label></strong>
-            <?php echo $fetch['date']?>						
+            <?php echo date("M d, Y", strtotime($fetch['date']))?>						
 </div>
 </div>
 
@@ -86,7 +86,7 @@ ob_start();
        
 
 <fieldset class="border p-3  "  style="width:100%; margin-left:10px; margin-right:10px; ">
-      <legend class="w-auto px-2"  style="width:100%;">LEGENDS</legend>
+      <legend class="w-auto px-2"  style="width:100%;">LEGEND</legend>
             <!----============== 5star =============== -->
         
              <span class="fa fa-star checked" style="color: gold;margin-left:60px;"></span>
@@ -130,11 +130,11 @@ ob_start();
              <span class="fa fa-star checked" style="color: #ddd;"></span>
              <span class="fa fa-star checked" style="color: #ddd;"></span>
              <span class="fa fa-star checked" style="color: #ddd; "></span><br>
-             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Execellent
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Very Good
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Good
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Fair
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Poor</p> 
+             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Execellent
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Very Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Fair
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Poor</p> 
                       
   </fieldset> 
 
@@ -143,8 +143,8 @@ ob_start();
        <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
     <thead>
         <tr>           
-           <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
-            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>   
+           <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF; text-align:center;">Critea</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;text-align:center;"> Rating</th>   
         </tr>
     </thead>
     
@@ -206,15 +206,16 @@ ob_start();
 
 </form>  
 
-<button name = "feedback_print" id="print" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;"><span class="fas fa-print"></span> Print</button> 
-
+<button name = "feedback_print" id="print" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;margin-right:20px;"><span class="fas fa-print"></span> Print</button> 
+<button name = "back" id="back" class="btn btn-primary btn-print"  style="float: left; margin-left:20px;"></span> Back</button> 
 
 
 
 <style>
 
  .rating {
-    margin-right:25%;
+    margin-right:30%;
+  
     border:none;
 }
 .rating:not(:checked) > input {
