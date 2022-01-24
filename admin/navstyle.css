@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
+  font-family: "Merienda" , sans-serif;
 }
 
 
@@ -169,7 +169,7 @@ th, td {
 .home_content .text{
   font-size: 25px;
   font-weight: 600;
-  color:var(--light-black);
+  color:black;
   margin-bottom:15px;
 }
 .home_content p{

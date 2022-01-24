@@ -29,45 +29,9 @@
 
 <body>
 
-   <!-- Navigation Bar -->   
-   <div class="sidebar">  
-   <div class="logo_name" style=" margin-bottom:8px;"> 
-   <h3> H2Order </h3><h3>H2Order</h3></div>
-      
-      <ul class="nav_list" style="margin-top:120px;">
-       
-        <li>
-         <a href="../admin/adminhome.php">
-          <i class='bx bx-grid-alt'></i>
-          <span style=" font-size: 16px;" class="links_name">Dashboard</span>
-         </a> 
-       </li>
-
-        <li>
-          <a href="../admin/calendar.php">
-           <i class='bx bxs-calendar'></i>
-           <span style=" font-size: 16px;" class="links_name">Calendar</span>
-          </a>   
-        </li>
-
-        <li>
-         <a href="../admin/inspection.php">
-          <i class='bx bxs-search-alt-2'></i>
-          <span style=" font-size: 16px;" class="links_name">Inspection & Monitoring</span>
-        </a>   
-       </li>
-
-       <li>
-         <a href="../admin/announcement.php">
-          <i class='bx bxs-megaphone'></i>
-          <span style=" font-size: 16px;" class="links_name">Announcements</span>
-         </a>
-       </li>
-          
-      </ul>
-   </div>
-
-  </div>
+  <!-- Navbar -->
+  <?php include'navbar.php';?>
+  <!-- /.navbar -->
 
 
 <!-- Blue Background -->
@@ -94,7 +58,7 @@
              <img src = "../photo/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
         </div>
         <div class="menu">
-            <h3><?php echo $name;?> <br> <span>Website Designer</span></h3>
+            <h3><?php echo $name;?> <br> <span>Administrator</span></h3>
             <ul>
                
                 

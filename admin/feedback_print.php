@@ -39,18 +39,12 @@ ob_start();
 
 
 <?php
-	
 	$query = $conn->query("SELECT * FROM `feedback` WHERE `feedback_id` = '$_REQUEST[feedback_id]'") or die(mysqli_error());
 	$fetch = $query->fetch_array();
-	
 ?>
 
   
 <form method = "POST"  action = "feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?> ">
-
-
-
-
 
 <div class="card" style="margin-left:20px; margin-right:20px;">
           <div class="card-header">
@@ -63,65 +57,101 @@ ob_start();
                     </center><br><br>
                     <hr>
                   </div><br><br><br>
-                  
-          
-    
 
                   
-                  <div class = "col-md-4" >
-        <div class = "form-group">
+<div class = "col-md-4" >
+<div class = "form-group">
       
-        
-
-        
-  <?php  
- 
-							$query = $conn->query("SELECT feedback.feedback_id, merchant.name, feedback.date, feedback.critea_1
-              FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE `feedback_id` = '$_REQUEST[feedback_id]' ") or die(mysqli_error());
+        <?php  
+            $query = $conn->query("SELECT feedback.feedback_id, merchant.name, feedback.date, feedback.critea_1
+            FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE `feedback_id` = '$_REQUEST[feedback_id]' ") or die(mysqli_error());
 						$fetch = $query->fetch_array();	
-						?>
+				?>
+
      <strong><label>Name: </label></strong>
-
-     
-           <?php echo $fetch['name']?>  
-
-    
-
-
+     <?php echo $fetch['name']?>  
 
 </div>
-
 </div>
-
-
 
 
 <div class = "col-md-4" style="margin-left:310px;" >
         <div class = "form-group">
 			<strong><label>Date:</label></strong>
-            <?php echo $fetch['date']?>
-						
+            <?php echo $fetch['date']?>						
 </div>
-
 </div>
 
 
        
 
+<fieldset class="border p-3  "  style="width:100%; margin-left:10px; margin-right:10px; ">
+      <legend class="w-auto px-2"  style="width:100%;">LEGENDS</legend>
+            <!----============== 5star =============== -->
+        
+             <span class="fa fa-star checked" style="color: gold;margin-left:60px;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+            
+
+             <!----============== 4star =============== -->
+            
+             <span class="fa fa-star checked" style="color: gold; margin-left:60px;" ></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             
+
+              <!----============== 3star =============== -->
+             
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px; "></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             
+
+              <!----============== 2star =============== -->
+              
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px;"></span>
+             <span class="fa fa-star checked" style="color: gold;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd; "></span>
+            
+
+              <!----============== 1star =============== -->
+             
+              <span class="fa fa-star checked" style="color: gold;margin-left:60px; "></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd;"></span>
+             <span class="fa fa-star checked" style="color: #ddd; "></span><br>
+             <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Execellent
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  Very Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Good
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Fair
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Poor</p> 
+                      
+  </fieldset> 
+
+
+
        <table id="example"   class="table table-bordered border-primary table-hover "   style="margin-left:15px; width:97%; margin-top:60px;border:1px solid blue;" >
     <thead>
-        <tr>
-            
-            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
-            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>
-           
+        <tr>           
+           <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;">Critea</th>
+            <th scope="col" class=" border-primary" style="border:1px solid blue;background:#1E90FF;color:white;"> Rating</th>   
         </tr>
     </thead>
     
     <tbody >
 
     
-  <?php  
+          <?php  
 							$query = $conn->query("SELECT feedback.feedback_id, merchant.name, feedback.date, feedback.critea_1
               FROM merchant RIGHT JOIN feedback ON merchant.merchant_id = feedback.merchant_id WHERE `feedback_id` = '$_REQUEST[feedback_id]' ") or die(mysqli_error());
 						
@@ -131,7 +161,7 @@ ob_start();
 
         <tr>
         
-        <td class=" border-primary" style="border:1px solid blue;"></td>
+        <td class=" border-primary" style="border:1px solid blue;"> </td>
         
       
             <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating">
@@ -164,8 +194,6 @@ ob_start();
     </tbody>
 </table>
 
-
-
                 </div>
               </div>
             </div>
@@ -175,19 +203,18 @@ ob_start();
 <br>
      
 <div>
-<button name = "feedback_print" type="hidden" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;"><span class="fas fa-print"></span> Print</button> 
+
 </form>  
 
+<button name = "feedback_print" id="print" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;"><span class="fas fa-print"></span> Print</button> 
 
 
-<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+
+
 <style>
 
-
-
-
-        .rating {
-        margin-right:25%;
+ .rating {
+    margin-right:25%;
     border:none;
 }
 .rating:not(:checked) > input {
@@ -220,17 +247,16 @@ ob_start();
 }
 .rating > label:active {
     position:relative;
+  
 
 
-    @media print {
-          .btn-print, .btn-docx, .btn-lg,.back, .card-title, footer{
-            display:none !important;
-      } 
-       .bg-danger {
-        background-color: #f2dede !important;
-      }     
-      }    
+}    
 
+@media print {
+  #print{
+    display:none;
+  }
+}
 </style>
 
 
