@@ -164,7 +164,7 @@ ob_start();
         <td class=" border-primary" style="border:1px solid blue;"> </td>
         
       
-            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating3">
+            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating">
            
           
             <input  type="radio" id="star5 " name="critea_1"

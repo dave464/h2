@@ -89,29 +89,7 @@
    <div class="home_content">
     
   
-   <div class="action">
-        <div class="profile" style="margin-top:-340px;
-        margin-right:17px;float:right" onclick="menuToggle()">
-             <img src = "../photo/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
-        </div>
-        <div class="menu">
-            <h3><?php echo $name;?> <br> <span>Administrator</span></h3>
-            <ul>
-               
-                
-                <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
-                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
-                <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        function menuToggle() {
-            const toggleMenu = document.querySelector(".menu");
-            toggleMenu.classList.toggle('active')
-        }
-    </script> 
-
+  
 
     <?php	
 			$q_wstation = $conn->query("SELECT COUNT(merchant_id) as total FROM `merchant` ") or die(mysqli_error());
@@ -154,7 +132,7 @@
  <!-- <div id="top_x_div" style="margin-left:20px; margin-top:-40px;width: 980px; height: 500px;
              border: 25px solid white; box-shadow: 1px 2px 5px black;"></div>    -->
                              
-                             <div id="piechart_3d"
+      <div id="piechart_3d"
    
    style="
      width: 980px; 
@@ -165,6 +143,30 @@
     
      ">
    </div>
+
+<!-- user profile -->
+   <div class="action">
+        <div class="profile" style="margin-top:-800px;
+        margin-right:17px;float:right" onclick="menuToggle()">
+             <img src = "../photo/<?php echo $fetch['photo']?>" id = "lbl" width = "100%" height = "100%"/>
+        </div>
+        <div class="menu">
+            <h3><?php echo $name;?> <br> <span>Administrator</span></h3>
+            <ul>
+               
+                
+                <li><img src="../img/edit.png" alt=""><a href="edit_account.php">Edit Account</a></li>         
+                <li><img src="../img/user.png" alt=""><a href="account.php">User Profile</a></li>
+                <li><img src="../img/log-out.png" alt=""><a href="logout.php">Log-Out</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function menuToggle() {
+            const toggleMenu = document.querySelector(".menu");
+            toggleMenu.classList.toggle('active')
+        }
+    </script> 
 
 
 

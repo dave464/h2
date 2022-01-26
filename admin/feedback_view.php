@@ -134,7 +134,7 @@
       <td class=" border-primary" style="border:1px solid blue;"><?php echo $fetch['name']?></td>
       
       
-      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-warning" href="feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>Edit</a>      
+      <td class=" border-primary" style="border:1px solid blue; color:white;"><a class = "btn btn-success" href="feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?>" style="color:white;" ><i class = "glyphicon glyphicon-remove"></i>View</a>      
     </tr>
     <?php
 							}
