@@ -44,7 +44,7 @@ ob_start();
 ?>
 
   
-<form method = "POST"  action = "feedback_print.php?feedback_id=<?php echo $fetch['feedback_id']?> "> <br>
+<form method = "POST"  action = "feedback_query.php?feedback_id=<?php echo $fetch['feedback_id']?> "> <br>
 
 <div class="card" style="margin-left:20px; margin-right:20px;">
           <div class="card-header">
@@ -164,7 +164,7 @@ ob_start();
         <td class=" border-primary" style="border:1px solid blue;"> </td>
         
       
-            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating">
+            <td class=" border-primary" style="border:1px solid blue;" ><fieldset  class="rating3">
            
           
             <input  type="radio" id="star5 " name="critea_1"
@@ -207,7 +207,7 @@ ob_start();
 </form>  
 
 <button name = "feedback_print" id="print" class="btn btn-primary btn-print" onclick="window.print()" style="float: right;margin-right:20px;"><span class="fas fa-print"></span> Print</button> 
-<button name = "back" id="back" class="btn btn-primary btn-print"  style="float: left; margin-left:20px;"></span> Back</button> 
+<button name = "back" id="back"  class="btn btn-primary btn-print"  style="float: left; margin-left:20px;"></span> Back</button> 
 
 
 
@@ -255,6 +255,9 @@ ob_start();
 
 @media print {
   #print{
+    display:none;
+  }
+  #back{
     display:none;
   }
 }

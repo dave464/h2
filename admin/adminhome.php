@@ -151,10 +151,19 @@
                      </div>
                
 <!-- Charts-->
-  <div id="top_x_div" style="margin-left:20px; margin-top:-40px;width: 980px; height: 500px;
-             border: 25px solid white; box-shadow: 1px 2px 5px black;"></div>    
+ <!-- <div id="top_x_div" style="margin-left:20px; margin-top:-40px;width: 980px; height: 500px;
+             border: 25px solid white; box-shadow: 1px 2px 5px black;"></div>    -->
                              
-
+                             <div id="piechart_3d"
+   
+   style="
+     width: 980px; 
+     height: 500px; 
+     margin-left: 20px;
+     margin-top:-40px;
+    
+    
+     ">
    </div>
 
 
@@ -194,4 +203,30 @@
         var chart = new google.charts.Bar(document.getElementById('top_x_div'));
         chart.draw(data, options);
       };
+
+
+         //----------- Pie Graph-----------//
+
+
+         google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Brgy 1',   0], ['Brgy 2',   1], ['Brgy 3',   1], ['Brgy 4',   1], ['Brgy 5',   1], ['Brgy 6',   1], 
+          ['Brgy 7',   1], ['Brgy 8',   1], ['Brgy 9',   1], ['Brgy 10',   1], ['Brgy 11',   1], ['Brgy 12',   1]
+          
+        
+        ]);
+
+        var options = {
+          title: 'Number of Waterstation per Barangay',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+
+
     </script>
